@@ -1,0 +1,61 @@
+resilience4j.circuitbreaker:
+  instances:
+    backendB:
+      registerHealthIndicator: true
+      slidingWindowSize: 2
+      permittedNumberOfCallsInHalfOpenState: 2
+      slidingWindowType: TIME_BASED
+      minimumNumberOfCalls: 1
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 100
+      eventConsumerBufferSize: 10
+      recordFailurePredicate: br.com.guini.springcloud.servicea.config.RecordFailurePredicate
+
+resilience4j.retry:
+  instances:
+    backendB:
+      maxAttempts: 3
+      waitDuration: 2s
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.lang.RuntimeException
+      ignoreExceptions:
+        - java.io.IOException
+
+resilience4j.bulkhead:
+  instances:
+   backendB:
+      maxWaitDuration: 10ms
+      maxConcurrentCalls: 20
+
+resilience4j.ratelimiter:
+  configs:
+    default:
+      registerHealthIndicator: true
+  instances:
+    backendB:
+      limitForPeriod: 10
+      limitRefreshPeriod: 1s
+      timeoutDuration: 0
+      registerHealthIndicator: true
+      eventConsumerBufferSize: 100
+
+resilience4j:
+  circuitbreaker:
+    circuitBreakerAspectOrder: 1
+  retry:
+    retryAspectOrder: 2
+
+management.health.circuitbreakers.enabled: true
+management.health.ratelimiters.enabled: true
+management.endpoints.web.exposure.include: '*'
+
+management:
+  metrics:
+    export:
+      newrelic:
+        api-key: xx
+        account-id: xx
+        step: 1m
