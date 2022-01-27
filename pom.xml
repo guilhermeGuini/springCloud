@@ -26,6 +26,12 @@
         <spring-cloud.version>2020.0.3</spring-cloud.version>
     </properties>
 
+    <scm>
+        <url>https://github.com/guilhermeGuini/springCloud</url>
+        <connection>scm:git:ssh://git@github.com:guilhermeGuini/springCloud.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
