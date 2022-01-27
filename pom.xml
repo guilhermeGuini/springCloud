@@ -17,7 +17,7 @@
 
     <groupId>br.com.guini</groupId>
     <artifactId>spring-cloud</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>springCloud</name>
     <description>Testing spring cloud features</description>
 
@@ -100,6 +100,24 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.smartling.cc4j</groupId>
+                <artifactId>conventional-commits-maven-plugin</artifactId>
+                <version>0.2.0</version>
             </plugin>
         </plugins>
     </build>
