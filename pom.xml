@@ -28,7 +28,8 @@
 
     <scm>
         <url>https://github.com/guilhermeGuini/springCloud</url>
-        <connection>scm:git:ssh://git@github.com:guilhermeGuini/springCloud.git</connection>
+        <connection>scm:git:ssh://github.com/guilhermeGuini/springCloud.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/guilhermeGuini/springCloud.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
