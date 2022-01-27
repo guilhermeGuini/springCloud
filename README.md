@@ -1,6 +1,6 @@
 # Spring Cloud Features Examples
 
-## Features 
+## Features  
 
 - Feign
 - CircuitBreaker using resilience4j
