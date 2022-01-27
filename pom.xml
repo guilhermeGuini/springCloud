@@ -11,7 +11,7 @@
 
     <groupId>br.com.guini</groupId>
     <artifactId>spring-cloud</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1-SNAPSHOT</version>
     <name>springCloud</name>
     <description>Testing spring cloud features</description>
 
@@ -24,7 +24,7 @@
         <url>https://github.com/guilhermeGuini/springCloud</url>
         <connection>scm:git:ssh://github.com/guilhermeGuini/springCloud.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/guilhermeGuini/springCloud.git</developerConnection>
-        <tag>v3.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
